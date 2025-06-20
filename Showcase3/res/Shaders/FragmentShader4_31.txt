@@ -1,0 +1,74 @@
+#version 330 core
+
+out vec4 FragColor;
+
+#define MAX_LIGHTS 8
+
+in VertexOutput {
+    vec3 fragmentPosition;
+    vec2 textureCoordinates;
+    vec3 tangentLightSourcePosition[MAX_LIGHTS];
+    vec3 tangentLightSourceDirection[MAX_LIGHTS];
+    vec3 tangentViewPosition;
+    vec3 tangentFragmentPosition;
+} fragmentInput;
+
+uniform sampler2D diffuse_map;
+uniform sampler2D normal_map;
+
+uniform int point_lights;
+uniform int dir_lights;
+uniform vec3 lightSourcePosition[MAX_LIGHTS];
+uniform vec3 lightSourceDirection[MAX_LIGHTS];
+uniform int lightPointEnabled[MAX_LIGHTS];
+uniform int lightDirEnabled[MAX_LIGHTS];
+
+void main()
+{           
+     // obtain normal from normal map in range [0,1]
+    vec3 normal = texture(normal_map, fragmentInput.textureCoordinates).rgb;
+    // transform normal vector to range [-1,1]
+    normal = normalize(normal * 2.0 - 1.0);  // this normal is in tangent space
+   
+    // get diffuse color
+    vec3 color = texture(diffuse_map, fragmentInput.textureCoordinates).rgb;
+    // ambient
+    vec3 ambient = 0.1 * color;
+    // diffuse
+    vec3 result = vec3(0.0);
+    int delimiter = (point_lights < MAX_LIGHTS) ? point_lights : MAX_LIGHTS;
+    for(int i = 0; i < delimiter; i++){
+        if(lightPointEnabled[i] != 1){
+            continue;
+        }
+        vec3 lightDir = normalize(fragmentInput.tangentLightSourcePosition[i] - fragmentInput.tangentFragmentPosition);
+        float diff = max(dot(lightDir, normal), 0.0);
+        vec3 diffuse = diff * color;
+        // specular
+        vec3 viewDir = normalize(fragmentInput.tangentViewPosition - fragmentInput.tangentFragmentPosition);
+        vec3 reflectDir = reflect(-lightDir, normal);
+        vec3 halfwayDir = normalize(lightDir + viewDir);  
+        float spec = pow(max(dot(normal, halfwayDir), 0.0), 32.0);
+        vec3 specular = vec3(0.2) * spec;
+        result += ambient + diffuse + specular;
+    }
+    delimiter = (dir_lights < MAX_LIGHTS) ? dir_lights : MAX_LIGHTS;
+    for(int i = 0; i < delimiter; i++){
+        if(lightDirEnabled[i] != 1){
+            continue;
+        }
+        vec3 lightDir = normalize(-fragmentInput.tangentLightSourceDirection[i]);
+        float diff = max(dot(lightDir, normal), 0.0);
+        vec3 diffuse = diff * color;
+        // specular
+        vec3 viewDir = normalize(fragmentInput.tangentViewPosition - fragmentInput.tangentFragmentPosition);
+        vec3 reflectDir = reflect(-lightDir, normal);
+        vec3 halfwayDir = normalize(lightDir + viewDir);  
+        float spec = pow(max(dot(normal, halfwayDir), 0.0), 32.0);
+        vec3 specular = vec3(0.2) * spec;
+        result += ambient + diffuse + specular;
+    }
+
+    FragColor = vec4(result, 1.0);
+}
+

@@ -1,0 +1,11 @@
+#version 330 core
+
+layout (location = 0) in vec3 input_position;
+uniform vec3 position_offset;
+out vec3 position;
+
+void main() 
+{   vec3 final_position = input_position - position_offset;
+	gl_Position = vec4(input_position - position_offset, 1.0);
+    position = final_position;
+}

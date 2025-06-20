@@ -1,0 +1,12 @@
+#version 330 core
+
+uniform int active_light;
+
+void main()
+{
+	if(active_light == 1){
+		gl_FragColor = vec4(1.0);
+	} else {
+		gl_FragColor = vec4(0.0);
+	}
+}
