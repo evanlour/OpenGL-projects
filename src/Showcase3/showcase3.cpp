@@ -229,7 +229,7 @@ unsigned int brickwall_normal_texture;
 unsigned int awesome_face_texture;
 
 int main(){
-    GLFWwindow* window = initiate("Final Exercise");
+    GLFWwindow* window = initiate("Final Showcase");
     glEnable(GL_DEPTH_TEST);
 	glDepthFunc(GL_LESS);
     stbi_set_flip_vertically_on_load(true);

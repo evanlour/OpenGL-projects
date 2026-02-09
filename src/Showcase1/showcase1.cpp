@@ -34,7 +34,7 @@ GLfloat vertices2[] = {
     -0.3f, -0.7f, 0.0f
 };
 
-bool alternative_fragments = true;
+bool alternative_fragments = false;
 bool polygon_mode = false;
 bool alternative_colors = false;
 bool tab_flag = false;
