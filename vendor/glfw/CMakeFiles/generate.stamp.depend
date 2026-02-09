@@ -1,0 +1,16 @@
+# CMake generation dependency list for this directory.
+C:/Github_projects/OpenGL-projects/vendor/glfw/CMake/cmake_uninstall.cmake.in
+C:/Github_projects/OpenGL-projects/vendor/glfw/CMake/glfw3Config.cmake.in
+C:/Github_projects/OpenGL-projects/vendor/glfw/CMakeLists.txt
+C:/Users/evanlour/anaconda3/Lib/site-packages/cmake/data/share/cmake-3.31/Modules/BasicConfigVersion-SameMajorVersion.cmake.in
+C:/Users/evanlour/anaconda3/Lib/site-packages/cmake/data/share/cmake-3.31/Modules/CMakeDependentOption.cmake
+C:/Users/evanlour/anaconda3/Lib/site-packages/cmake/data/share/cmake-3.31/Modules/CMakePackageConfigHelpers.cmake
+C:/Users/evanlour/anaconda3/Lib/site-packages/cmake/data/share/cmake-3.31/Modules/CheckCSourceCompiles.cmake
+C:/Users/evanlour/anaconda3/Lib/site-packages/cmake/data/share/cmake-3.31/Modules/CheckIncludeFile.cmake
+C:/Users/evanlour/anaconda3/Lib/site-packages/cmake/data/share/cmake-3.31/Modules/CheckLibraryExists.cmake
+C:/Users/evanlour/anaconda3/Lib/site-packages/cmake/data/share/cmake-3.31/Modules/FindPackageHandleStandardArgs.cmake
+C:/Users/evanlour/anaconda3/Lib/site-packages/cmake/data/share/cmake-3.31/Modules/FindPackageMessage.cmake
+C:/Users/evanlour/anaconda3/Lib/site-packages/cmake/data/share/cmake-3.31/Modules/FindThreads.cmake
+C:/Users/evanlour/anaconda3/Lib/site-packages/cmake/data/share/cmake-3.31/Modules/GNUInstallDirs.cmake
+C:/Users/evanlour/anaconda3/Lib/site-packages/cmake/data/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake
+C:/Users/evanlour/anaconda3/Lib/site-packages/cmake/data/share/cmake-3.31/Modules/WriteBasicConfigVersionFile.cmake
