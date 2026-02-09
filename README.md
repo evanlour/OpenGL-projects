@@ -64,6 +64,7 @@ This series introduces user interface elements and intermediate graphics concept
 *   **showcase23.cpp**: Advanced rotations and translations. 3 cubes moving each based on each other, creating complex move patterns.
 
 <img src="res/showcase23.png" alt="showcase1_1" width="100%">
+
 *   **showcase24.cpp**: Advanced lighting and materials. Introduces moving light sources and material properties interacting with light. You can toggle positional and directional lights, as well as control a moving light source.
 <img src="res/showcase24.png" alt="showcase1_1" width="100%">
 
