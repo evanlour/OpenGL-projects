@@ -11,7 +11,7 @@ if(MSVC)
 endif()
 
 # LINK LIBRARIES
-target_link_libraries(Showcase1 PRIVATE glew glfw opengl32)
+target_link_libraries(Showcase1 PRIVATE OpenGL::GL glew glfw)
 target_include_directories(Showcase1 PRIVATE    
     glew
     glfw

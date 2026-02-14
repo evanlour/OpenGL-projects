@@ -11,8 +11,8 @@ if(MSVC)
 endif()
 
 # LINK LIBRARIES
-target_link_libraries(Showcase3 PRIVATE glew glfw glm opengl32 imgui stb_image)
-target_include_directories(Showcase1 PRIVATE    
+target_link_libraries(Showcase3 PRIVATE OpenGL::GL glew glfw glm imgui stb_image)
+target_include_directories(Showcase3 PRIVATE    
     glew
     glfw
     glm

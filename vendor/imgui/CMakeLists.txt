@@ -8,4 +8,4 @@ add_library(imgui STATIC
     backends/imgui_impl_opengl3.cpp
 )
 target_include_directories(imgui PUBLIC "." "backends")
-target_link_libraries(imgui PUBLIC glfw glew opengl32)
+target_link_libraries(imgui PUBLIC glfw glew OpenGL::GL)

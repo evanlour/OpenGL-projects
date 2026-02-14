@@ -1,5 +1,5 @@
 # SHOWCASE 21
-
+find_package(OpenGL REQUIRED)
 add_executable(Showcase21 Camera.h functions.h showcase21.cpp)
 set_target_properties(Showcase21 PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/bin/Showcase21"
@@ -13,7 +13,7 @@ if(MSVC)
 endif()
 
 # LINK LIBRARIES
-target_link_libraries(Showcase21 PRIVATE glew glfw opengl32 imgui)
+target_link_libraries(Showcase21 PRIVATE glew glfw OpenGL::GL imgui)
 target_include_directories(Showcase21 PRIVATE    
     glew
     glfw
@@ -46,7 +46,7 @@ if(MSVC)
 endif()
 
 # LINK LIBRARIES
-target_link_libraries(Showcase22 PRIVATE glew glfw opengl32 imgui)
+target_link_libraries(Showcase22 PRIVATE glew glfw OpenGL::GL imgui)
 target_include_directories(Showcase22 PRIVATE    
     glew
     glfw
@@ -79,7 +79,7 @@ if(MSVC)
 endif()
 
 # LINK LIBRARIES
-target_link_libraries(Showcase23 PRIVATE glew glfw glm opengl32 imgui)
+target_link_libraries(Showcase23 PRIVATE glew glfw glm OpenGL::GL imgui)
 target_include_directories(Showcase23 PRIVATE    
     glew
     glfw
@@ -113,7 +113,7 @@ if(MSVC)
 endif()
 
 # LINK LIBRARIES
-target_link_libraries(Showcase24 PRIVATE glew glfw glm opengl32 imgui)
+target_link_libraries(Showcase24 PRIVATE glew glfw glm OpenGL::GL imgui)
 target_include_directories(Showcase24 PRIVATE    
     glew
     glfw
